@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bankonet.metier.ReportService;
+import com.bankonet.model.Adresse;
+import com.bankonet.model.Client;
 
 /**
  * @author ETY
@@ -24,6 +26,7 @@ public class Test_TP1 {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
@@ -37,6 +40,10 @@ public class Test_TP1 {
 		reportservice2.setAuteur("tata");
 		reportservice1.generateMonthlyReport();
 		reportservice2.generateMonthlyReport();
+		
+		Adresse adresse = (Adresse) context.getBean("adresse");
+		Client client = (Client) context.getBean("client");
+		System.out.println(""+client.toString()+" \\n" + "\n" + adresse.toString());
 	}
 
 }

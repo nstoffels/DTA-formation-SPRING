@@ -8,15 +8,25 @@
 		<property name="ireportgenerator" ref="htmlReport"></property>
 	</bean>
 
-	<bean id="htmlReport" class="com.bankonet.report.ReportFactory" factory-method="createReport"
-		scope="singleton">
-		<constructor-arg value="html"/>
-		</bean>
-		
-	<bean id="pdfReport" class="com.bankonet.report.ReportFactory" factory-method="createReport"
-		scope="singleton">
-		<constructor-arg value="pdf"/>
-		</bean>
+	<bean id="htmlReport" class="com.bankonet.report.ReportFactory"
+		factory-method="createReport" scope="singleton">
+		<constructor-arg value="html" />
+	</bean>
 
+	<bean id="pdfReport" class="com.bankonet.report.ReportFactory"
+		factory-method="createReport" scope="singleton">
+		<constructor-arg value="pdf" />
+	</bean>
 
+	<bean id="client" class="com.bankonet.model.Client" scope="prototype">
+		<property name="adresse" ref="adresse"></property>
+		<property name="nom" value="DODO"></property>
+		<property name="prenom" value="Petit"></property>
+		<property name="id" value="1"></property>
+	</bean>
+	<bean id="adresse" class="com.bankonet.model.Adresse" scope="prototype">
+		<property name="numero" value="5"></property>
+		<property name="rue" value="petit sommeil"></property>
+		<property name="ville" value="Sommeil"></property>
+	</bean>
 </beans>

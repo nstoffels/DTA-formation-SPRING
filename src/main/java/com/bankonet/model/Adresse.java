@@ -13,6 +13,12 @@ public class Adresse {
 	String rue;
 	String ville;
 	
+	/*
+	 * 
+	 * génération des constructeurs
+	 * 
+	 */
+	
 	/**
 	 * 
 	 */
@@ -34,13 +40,24 @@ public class Adresse {
 		
 	}
 	
+	/*
+	 * méthode
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		
 		return "numero : "+this.getNumero() + " ; " + " rue : "+this.getRue() + " ; " + " ville : " + this.getVille();
 	}
-
+	
+	/*
+	 * 
+	 * Génération des getters/setters
+	 * 
+	 */
+	
 	/**
 	 * @return the numero
 	 */

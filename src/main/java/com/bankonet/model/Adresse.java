@@ -38,7 +38,7 @@ public class Adresse {
 	public String toString() {
 		// TODO Auto-generated method stub
 		
-		return "numero : "+this.getNumero() + " ; " + " rue : "+this.getRue() + " ; " + this.getVille();
+		return "numero : "+this.getNumero() + " ; " + " rue : "+this.getRue() + " ; " + " ville : " + this.getVille();
 	}
 
 	/**

@@ -18,8 +18,7 @@
 		<constructor-arg value="pdf" />
 	</bean>
 
-	<bean id="client" class="com.bankonet.model.Client" scope="prototype">
-		<property name="adresse" ref="adresse"></property>
+	<bean id="client" class="com.bankonet.model.Client" scope="prototype" autowire="byType" >
 		<property name="nom" value="DODO"></property>
 		<property name="prenom" value="Petit"></property>
 		<property name="id" value="1"></property>
@@ -27,6 +26,6 @@
 	<bean id="adresse" class="com.bankonet.model.Adresse" scope="prototype">
 		<property name="numero" value="5"></property>
 		<property name="rue" value="petit sommeil"></property>
-		<property name="ville" value="Sommeil"></property>
+		<property name="ville" value="Repos"></property>
 	</bean>
 </beans>

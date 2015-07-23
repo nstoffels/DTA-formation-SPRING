@@ -7,7 +7,7 @@ package com.bankonet.report;
  * @author ETY
  *
  */
-public class HtmlReportGenerator implements IReportGenerator {
+public class HtmlReportGenerator extends ReportGenerator implements IReportGenerator {
 
 	/**
 	 * 

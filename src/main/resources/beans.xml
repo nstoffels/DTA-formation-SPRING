@@ -8,10 +8,15 @@
 		<property name="ireportgenerator" ref="htmlReport"></property>
 	</bean>
 
-	<bean id="htmlReport" class="com.bankonet.report.HtmlReportGenerator"
-		scope="singleton" />
-	<bean id="pdfReport" class="com.bankonet.report.PdfReportGenerator"
-		scope="singleton" />
+	<bean id="htmlReport" class="com.bankonet.report.ReportFactory" factory-method="createReport"
+		scope="singleton">
+		<constructor-arg value="html"/>
+		</bean>
+		
+	<bean id="pdfReport" class="com.bankonet.report.ReportFactory" factory-method="createReport"
+		scope="singleton">
+		<constructor-arg value="pdf"/>
+		</bean>
 
 
 </beans>

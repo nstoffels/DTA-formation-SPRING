@@ -3,6 +3,8 @@
  */
 package com.bankonet.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * @author ETY
  *
@@ -15,6 +17,8 @@ public class Client {
 	int id;
 	String nom;
 	String prenom;
+	
+	@Autowired
 	private Adresse adresse;
 	
 	/**

@@ -11,7 +11,7 @@ import com.bankonet.report.IReportGenerator;
  */
 public class ReportService {
 	
-	
+	private String auteur;
 	private IReportGenerator ireportGenerator = null;
 	/**
 	 * 
@@ -34,7 +34,9 @@ public class ReportService {
 		ireportGenerator.generate();
 	}
 	
-	
+	public void generateMonthlyReport(){
+		ireportGenerator.generate(auteur);
+	}
 	
 	
 	/*
@@ -56,6 +58,34 @@ public class ReportService {
 	 */
 	public void setIreportgenerator(IReportGenerator ireportgenerator) {
 		this.ireportGenerator = ireportgenerator;
+	}
+
+	/**
+	 * @return the auteur
+	 */
+	public String getAuteur() {
+		return auteur;
+	}
+
+	/**
+	 * @param auteur the auteur to set
+	 */
+	public void setAuteur(String auteur) {
+		this.auteur = auteur;
+	}
+
+	/**
+	 * @return the ireportGenerator
+	 */
+	public IReportGenerator getIreportGenerator() {
+		return ireportGenerator;
+	}
+
+	/**
+	 * @param ireportGenerator the ireportGenerator to set
+	 */
+	public void setIreportGenerator(IReportGenerator ireportGenerator) {
+		this.ireportGenerator = ireportGenerator;
 	}
 
 	

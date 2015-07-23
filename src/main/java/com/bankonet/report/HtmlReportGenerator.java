@@ -23,5 +23,14 @@ public class HtmlReportGenerator implements IReportGenerator {
 		// TODO Auto-generated method stub
 		System.out.println("génération du rapport html");
 	}
+	/**
+	 * 
+	 */
+	@Override
+	public void generate(String auteur) {
+		// TODO Auto-generated method stub
+		this.generate();
+		System.out.println("->Auteur : "+auteur);
+	}
 
 }

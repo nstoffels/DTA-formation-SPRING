@@ -9,19 +9,23 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author ETY
  *
  */
-public class Client {
+public class Client extends Personne {
+
+	/**
+	 * @param id
+	 * @param nom
+	 * @param prenom
+	 */
+	
 
 	/**
 	 * 
 	 */
-	int id;
-	String nom;
-	String prenom;
+	String login;
+	String motDePasse;
 
 	@Autowired
 	private Adresse adresse;
-
-
 
 	/*
 	 * 
@@ -37,14 +41,16 @@ public class Client {
 	}
 
 	/**
-	 * @param id
+	 * @param ids
 	 * @param nom
 	 * @param prenom
 	 */
-	public Client(int id, String nom, String prenom, Adresse adresse) {
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
+	public Client(int id, String nom, String prenom,String login, String motDePasse, Adresse adresse) {
+		super(id, nom, prenom);
+		this.login=login;
+		this.motDePasse=motDePasse;
+		this.adresse=adresse;
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -72,69 +78,13 @@ public class Client {
 	 * Génération des getters/setters
 	 * 
 	 */
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-
-	/**
-	 * @return the nom
-	 */
-	public String getNom() {
-		return nom;
-	}
-
-
-
-	/**
-	 * @param nom the nom to set
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-
-
-	/**
-	 * @return the prenom
-	 */
-	public String getPrenom() {
-		return prenom;
-	}
-
-
-
-	/**
-	 * @param prenom the prenom to set
-	 */
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
-
-
+	
 	/**
 	 * @return the adresse
 	 */
 	public Adresse getAdresse() {
 		return adresse;
 	}
-
-
 
 	/**
 	 * @param adresse the adresse to set
@@ -143,5 +93,31 @@ public class Client {
 		this.adresse = adresse;
 	}
 
+	/**
+	 * @return the login
+	 */
+	public String getLogin() {
+		return login;
+	}
 
+	/**
+	 * @param login the login to set
+	 */
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	/**
+	 * @return the motDePasse
+	 */
+	public String getMotDePasse() {
+		return motDePasse;
+	}
+
+	/**
+	 * @param motDePasse the motDePasse to set
+	 */
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
 }

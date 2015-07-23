@@ -19,7 +19,6 @@ public class PdfReportGenerator extends ReportGenerator implements IReportGenera
 	/**
 	 * implémentation de la méthode generate de l'interface IReportGenerator
 	 */
-	@Override
 	public void generate(String auteur) {
 		// TODO Auto-generated method stub
 		this.generate();
@@ -28,7 +27,6 @@ public class PdfReportGenerator extends ReportGenerator implements IReportGenera
 	/**
 	 * 
 	 */
-	@Override
 	public void generate() {
 		// TODO Auto-generated method stub
 		System.out.println("génération du rapport pdf");

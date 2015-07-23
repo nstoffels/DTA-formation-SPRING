@@ -5,7 +5,7 @@
 	 http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.1.xsd ">
-
+	<context:component-scan base-package="com.bankonet" />
 	<context:annotation-config />
 
 	<bean id="reportservice" class="com.bankonet.metier.ReportService"
@@ -23,14 +23,19 @@
 		<constructor-arg value="pdf" />
 	</bean>
 
-	<bean id="client" class="com.bankonet.model.Client" scope="prototype">
-		<property name="nom" value="DODO"></property>
-		<property name="prenom" value="Petit"></property>
-		<property name="id" value="1"></property>
+	<bean id="personne" class="com.bankonet.model.Personne" scope="prototype">
+
 	</bean>
 	<bean id="adresse" class="com.bankonet.model.Adresse" scope="prototype">
 		<property name="numero" value="5"></property>
 		<property name="rue" value="petit sommeil"></property>
 		<property name="ville" value="Repos"></property>
+	</bean>
+	<bean id="client" class="com.bankonet.model.Client" scope="prototype">
+		<property name="login" value="login"></property>
+		<property name="motDePasse" value="petit sommeil"></property>
+		<property name="nom" value="DODO"></property>
+		<property name="prenom" value="Petit"></property>
+		<property name="id" value="1"></property>
 	</bean>
 </beans>

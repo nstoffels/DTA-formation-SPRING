@@ -18,7 +18,6 @@ public class HtmlReportGenerator extends ReportGenerator implements IReportGener
 	/**
 	 * implémentation de la méthode generate de l'interface IReportGenerator
 	 */
-	@Override
 	public void generate() {
 		// TODO Auto-generated method stub
 		System.out.println("génération du rapport html");
@@ -26,7 +25,6 @@ public class HtmlReportGenerator extends ReportGenerator implements IReportGener
 	/**
 	 * 
 	 */
-	@Override
 	public void generate(String auteur) {
 		// TODO Auto-generated method stub
 		this.generate();

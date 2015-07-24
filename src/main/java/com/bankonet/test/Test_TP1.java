@@ -10,7 +10,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bankonet.metier.BankonetMetier;
 import com.bankonet.metier.ReportService;
-import com.bankonet.model.Adresse;
 import com.bankonet.model.Client;
 
 /**
@@ -29,10 +28,11 @@ public class Test_TP1 {
 	/**
 	 * @param args
 	 */
-	@SuppressWarnings("resource")
+
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
+		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		ReportService reportservice = (ReportService) context.getBean("reportservice");
 		reportservice.generateDailyReport();
@@ -45,9 +45,8 @@ public class Test_TP1 {
 		reportservice1.generateMonthlyReport();
 		reportservice2.generateMonthlyReport();
 		
-		Adresse adresse = (Adresse) context.getBean("adresse");
 		Client client = (Client) context.getBean("client");
-		System.out.println(""+client.toString()+ "\n" + adresse.toString());
+		System.out.println(""+client.toString());
 		
 		BankonetMetier bankonetMetier = (BankonetMetier) context.getBean("bankonetmetier");
 		List<Client> clients = bankonetMetier.listClients();

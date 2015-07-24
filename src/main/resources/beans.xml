@@ -38,5 +38,11 @@
 		<property name="nom" value="DODO"></property>
 		<property name="prenom" value="Petit"></property>
 		<property name="id" value="1"></property>
+		
+	</bean>
+	
+	<bean id="clientDAO" class="com.bankonet.dao.ClientDaoImpl" scope="prototype"></bean>
+	<bean id="bankonetmetier" class="com.bankonet.metier.BankonetMetier" scope="prototype">
+		<property name="clientdao" ref="clientDAO"></property>
 	</bean>
 </beans>

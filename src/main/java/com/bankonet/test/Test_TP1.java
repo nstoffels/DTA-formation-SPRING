@@ -63,6 +63,10 @@ public class Test_TP1 {
 		}else if (clients.equals(null)){
 			System.out.println("la liste des clients n'existe pas");
 		}
+		
+//		List<Client> cherchecli=bankonetMetier.chercherClients("LePremier");
+//		System.out.println(cherchecli);
+		
 //		System.out.println(bankonetMetier.listClients());
 		
 //		bankonetMetier.addClient(new Client("toto","tata","log2","mdp2",new Adresse(36, "avenue Cyrnos", "Paris")));

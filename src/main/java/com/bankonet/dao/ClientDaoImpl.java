@@ -99,7 +99,7 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public List<Client> chercherClients(String motCle) {
 		// TODO Auto-generated method stub
-		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
+		System.out.println("dans ClientDaoImpl.chercherClient --> client MàJ !");
 		Query req=em.createQuery("select c from Client c where c.nom like :x or c.prenom like :x");
 		req.setParameter("x", "%"+motCle+"%");
 		return req.getResultList();

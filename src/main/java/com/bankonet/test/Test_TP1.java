@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bankonet.metier.BankonetMetier;
+import com.bankonet.metier.IBankonetMetier;
 import com.bankonet.metier.ReportService;
 import com.bankonet.model.Client;
 
@@ -48,7 +49,7 @@ public class Test_TP1 {
 		Client client = (Client) context.getBean("client");
 		System.out.println(""+client.toString());
 		
-		BankonetMetier bankonetMetier = (BankonetMetier) context.getBean("bankonetmetier");
+		IBankonetMetier bankonetMetier = (IBankonetMetier) context.getBean("bankonetmetier");
 		List<Client> clients = bankonetMetier.listClients();
 		if(clients!=null){
 			for(Client client1 : clients){

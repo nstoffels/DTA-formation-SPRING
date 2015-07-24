@@ -20,8 +20,7 @@ import com.bankonet.model.Client;
 @Service("bankonetmetier") 
 @Scope("prototype")
 public class BankonetMetier implements IBankonetMetier {
-	@SuppressWarnings("restriction")
-	@Resource(name="clientdao")
+
 	public IClientDao clientdao;
 	
 	/**

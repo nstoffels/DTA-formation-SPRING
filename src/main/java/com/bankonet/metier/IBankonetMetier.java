@@ -19,4 +19,5 @@ public interface IBankonetMetier {
 	public Client editClient(int idClient);
 	public void updateClient(Client c);
 	public List<Client> chercherClients(String	motCle);
+	public List<Client> SupprimerClientDontLeNomContient(String motCle);
 }

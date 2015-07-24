@@ -3,12 +3,19 @@
  */
 package com.bankonet.model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author ETY
  *
  */
+@Entity
+@DiscriminatorValue("C")
 public class Client extends Personne {
 
 	/**
@@ -21,7 +28,11 @@ public class Client extends Personne {
 	/**
 	 * 
 	 */
+	@NotNull
+	@Size(min=2, max=16)
 	String login;
+	@NotNull
+	@Size(min=6, max=50)
 	String motDePasse;
 
 	@Autowired

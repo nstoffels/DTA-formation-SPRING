@@ -3,13 +3,29 @@
  */
 package com.bankonet.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.validation.constraints.Size;
+
 /**
  * @author ETY
  *
  */
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Personne {
+	  @Id
+	  @GeneratedValue
+	  private int ID;
+	
+	
 	int id;
-	String nom;
+	@Size(min=3, max=60)
+	String nom ;
+	@Size(min=3, max=60)
 	String prenom;
 	/**
 	 * 

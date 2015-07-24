@@ -52,12 +52,16 @@ public class Test_TP1 {
 		IBankonetMetier bankonetMetier = (IBankonetMetier) context.getBean("bankonetmetier");
 		List<Client> clients = bankonetMetier.listClients();
 		if(clients!=null){
+			System.out.println("la liste des clients existe");
 			for(Client client1 : clients){
 				System.out.println("client1");
 			}
+		}if(clients.isEmpty()){
+			System.out.println("la liste des clients est vide");
 		}else{
-			System.out.println("la liste des clients est nul");
+			System.out.println("la liste des clients n'existe pas");
 		}
+//		System.out.println(bankonetMetier.listClients());
 		
 	}
 

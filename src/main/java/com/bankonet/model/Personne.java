@@ -17,12 +17,12 @@ import javax.validation.constraints.Size;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Personne {
-	  @Id
-	  @GeneratedValue
-	  private int ID;
-	
-	
-	int id;
+	@Id
+	@GeneratedValue
+	private int id;
+
+
+
 	@Size(min=3, max=60)
 	String nom ;
 	@Size(min=3, max=60)
@@ -89,10 +89,10 @@ public class Personne {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 
 }

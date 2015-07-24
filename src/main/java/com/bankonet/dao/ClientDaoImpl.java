@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
@@ -36,9 +37,9 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public void addClient(Client c) {
 		// TODO Auto-generated method stub
-		em.persist(c);
 		System.out.println("dans ClientDaoImpl.addClient --> client ajouté !");
-
+		em.persist(c);
+		
 	}
 
 	/* (non-Javadoc)
@@ -47,12 +48,9 @@ public class ClientDaoImpl implements IClientDao {
 	public List<Client> listClients() {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.List<Client> --> liste client !");
-		 
-		//connection à la base
-		//requête
-		//List<Client> listClient = getResult();
-		
-		return null;//return listClient;
+		Query req=em.createQuery("select c from Client c");
+
+		return req.getResultList();
 	}
 
 	/* (non-Javadoc)
@@ -60,8 +58,11 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public void deleteClient(int idClient) {
 		// TODO Auto-generated method stub
-		em.remove(idClient);
 		System.out.println("dans ClientDaoImpl.deleteClient --> client ajouté !");
+		Client c=em.find(Client.class, idClient);
+		em.remove(c);
+		// ou em.remove(idClient);
+		
 	}
 
 	/* (non-Javadoc)
@@ -70,7 +71,9 @@ public class ClientDaoImpl implements IClientDao {
 	public Client editClient(int idClient) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.editClient --> client édité !");
-		return null;
+		Client client=em.find(Client.class, idClient);
+		//em.merge(client);
+		return client;
 	}
 
 	/* (non-Javadoc)
@@ -78,8 +81,10 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public void updateClient(Client c) {
 		// TODO Auto-generated method stub
-		
 		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
+		//Client client=em.find(Client.class, c);
+		em.merge(c);
+		
 	}
 
 	/* (non-Javadoc)
@@ -88,7 +93,8 @@ public class ClientDaoImpl implements IClientDao {
 	public List<Client> chercherClients(String motCle) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
-		return null;
+		Client client=em.find(Client.class, motCle);
+		return em.find(null, client);
 	}
 
 	/**

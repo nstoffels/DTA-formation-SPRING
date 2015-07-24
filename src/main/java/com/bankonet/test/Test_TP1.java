@@ -11,6 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.bankonet.metier.BankonetMetier;
 import com.bankonet.metier.IBankonetMetier;
 import com.bankonet.metier.ReportService;
+import com.bankonet.model.Adresse;
 import com.bankonet.model.Client;
 
 /**
@@ -54,14 +55,17 @@ public class Test_TP1 {
 		if(clients!=null){
 			System.out.println("la liste des clients existe");
 			for(Client client1 : clients){
-				System.out.println("client1");
+				System.out.println("-> " + client1);
 			}
+			
 		}if(clients.isEmpty()){
 			System.out.println("la liste des clients est vide");
-		}else{
+		}else if (clients.equals(null)){
 			System.out.println("la liste des clients n'existe pas");
 		}
 //		System.out.println(bankonetMetier.listClients());
+		
+//		bankonetMetier.addClient(new Client("toto","tata","log2","mdp2",new Adresse(36, "avenue Cyrnos", "Paris")));
 		
 	}
 

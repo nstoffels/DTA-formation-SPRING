@@ -56,14 +56,18 @@ public class Client extends Personne {
 	 * @param nom
 	 * @param prenom
 	 */
-	public Client(int id, String nom, String prenom,String login, String motDePasse, Adresse adresse) {
-		super(id, nom, prenom);
+	public Client(String nom, String prenom,String login, String motDePasse, Adresse adresse) {
+		super(nom, prenom);
 		this.login=login;
 		this.motDePasse=motDePasse;
 		this.adresse=adresse;
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public Client(int id){
+		super(id);
+	}
+	
 	/**
 	 * @param adresse
 	 */

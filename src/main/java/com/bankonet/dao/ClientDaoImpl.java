@@ -11,6 +11,7 @@ import javax.persistence.Query;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bankonet.model.Client;
 
@@ -27,6 +28,8 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	@PersistenceContext
 	private EntityManager em;
+	
+	
 
 	public ClientDaoImpl() {
 		// TODO Auto-generated constructor stub
@@ -35,6 +38,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#addClient(com.bankonet.model.Client)
 	 */
+	@Transactional
 	public void addClient(Client c) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.addClient --> client ajouté !");
@@ -56,6 +60,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#deleteClient(int)
 	 */
+	@Transactional
 	public void deleteClient(int idClient) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.deleteClient --> client ajouté !");
@@ -68,6 +73,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#editClient(int)
 	 */
+	@Transactional
 	public Client editClient(int idClient) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.editClient --> client édité !");
@@ -79,6 +85,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#updateClient(com.bankonet.model.Client)
 	 */
+	@Transactional
 	public void updateClient(Client c) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
@@ -93,8 +100,9 @@ public class ClientDaoImpl implements IClientDao {
 	public List<Client> chercherClients(String motCle) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
-		Client client=em.find(Client.class, motCle);
-		return em.find(null, client);
+		Query req=em.createQuery("select c from Client c where c.nom like :x or c.prenom like :x");
+		req.setParameter("x", "%"+motCle+"%");
+		return req.getResultList();
 	}
 
 	/**

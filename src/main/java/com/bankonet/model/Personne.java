@@ -34,19 +34,22 @@ public class Personne {
 		// TODO Auto-generated constructor stub
 	}
 	/**
-	 * @param id
 	 * @param nom
 	 * @param prenom
 	 */
-	public Personne(int id, String nom, String prenom) {
-		this.id = id;
+	public Personne(String nom, String prenom) {
+
 		this.nom = nom;
 		this.prenom = prenom;
 	}
 
-
-
-
+	/**
+	 * @param id
+	 */
+	public Personne(int id) {
+		super();
+		this.id = id;
+	}
 	/**
 	 * 
 	 * @return

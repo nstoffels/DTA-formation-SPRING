@@ -8,4 +8,8 @@ le tag tp2 correspond à la gestion des scopes.
 
 le tag tp3 correspond à l'utilisation d'une beanfactory.
 
-le tag tp4 correspond aux tests autowiring.
+les tags tp4 correspondent aux tests autowiring.
+
+les tags tp5 correspondent à l'apprentissage des couches DAO et métier
+
+les tags tp6 correspondent aux débuts de l'apprentissage de l'implémentation des JPA grâce à spring

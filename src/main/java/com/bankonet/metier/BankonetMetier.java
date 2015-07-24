@@ -4,7 +4,7 @@
 package com.bankonet.metier;
 
 import java.util.List;
-
+import javax.annotation.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ import com.bankonet.model.Client;
 @Service("bankonetmetier") 
 @Scope("prototype")
 public class BankonetMetier implements IBankonetMetier {
-	
+	@Resource(name="clientdao")
 	public IClientDao clientdao;
 	
 	/**

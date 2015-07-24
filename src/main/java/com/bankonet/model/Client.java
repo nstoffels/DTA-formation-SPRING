@@ -70,7 +70,7 @@ public class Client extends Personne {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "id : "+this.getId() + " ; " +" nom : "+this.getNom()+" ; "+ " Prenom : "+ this.getPrenom()+" ; "+" adresse : "+this.getAdresse()  ;
+		return "id : "+this.getId() + " ; " +" nom : "+this.getNom()+" ; "+ " Prenom : "+ this.getPrenom()+" ; "+" adresse : "+this.getAdresse()+" ; "+" a comme login :" + this.getLogin() ;
 	}
 
 	/*

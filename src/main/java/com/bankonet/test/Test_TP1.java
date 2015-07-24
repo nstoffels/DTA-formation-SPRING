@@ -31,7 +31,7 @@ public class Test_TP1 {
 	 */
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		//@Resource(name="bankonetmetier")
+		
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		ReportService reportservice = (ReportService) context.getBean("reportservice");
@@ -51,9 +51,14 @@ public class Test_TP1 {
 		
 		BankonetMetier bankonetMetier = (BankonetMetier) context.getBean("bankonetmetier");
 		List<Client> clients = bankonetMetier.listClients();
-		for(Client client1 : clients){
-			System.out.println("client1");
+		if(clients!=null){
+			for(Client client1 : clients){
+				System.out.println("client1");
+			}
+		}else{
+			System.out.println("la liste des clients est nul");
 		}
+		
 	}
 
 }

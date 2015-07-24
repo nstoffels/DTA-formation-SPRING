@@ -7,7 +7,7 @@
 	http://www.springframework.org/schema/context/spring-context-3.1.xsd ">
 	<context:component-scan base-package="com.bankonet" />
 	<context:annotation-config />
-
+	
 	<bean id="reportservice" class="com.bankonet.metier.ReportService"
 		scope="prototype">
 		<property name="ireportgenerator" ref="htmlReport"></property>
@@ -31,9 +31,10 @@
 		<property name="rue" value="petit sommeil"></property>
 		<property name="ville" value="Repos"></property>
 	</bean>
+	
 	<bean id="client" class="com.bankonet.model.Client" scope="prototype">
 		<property name="login" value="login"></property>
-		<property name="motDePasse" value="petit sommeil"></property>
+		<property name="motDePasse" value="mdp"></property>
 		<property name="nom" value="DODO"></property>
 		<property name="prenom" value="Petit"></property>
 		<property name="id" value="1"></property>

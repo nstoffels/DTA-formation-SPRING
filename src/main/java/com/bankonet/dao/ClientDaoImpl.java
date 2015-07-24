@@ -5,7 +5,9 @@ package com.bankonet.dao;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.bankonet.model.Client;
 
@@ -13,7 +15,8 @@ import com.bankonet.model.Client;
  * @author Admin Stoffels
  *
  */
-@Component("clientdao")
+@Repository("clientdao")
+@Scope("prototype")
 public class ClientDaoImpl implements IClientDao {
 
 	/**

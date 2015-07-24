@@ -5,6 +5,9 @@ package com.bankonet.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
@@ -21,6 +24,9 @@ public class ClientDaoImpl implements IClientDao {
 	/**
 	 * 
 	 */
+	@PersistenceContext
+	private EntityManager em;
+
 	public ClientDaoImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -30,6 +36,7 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public void addClient(Client c) {
 		// TODO Auto-generated method stub
+		em.persist(c);
 		System.out.println("dans ClientDaoImpl.addClient --> client ajouté !");
 
 	}
@@ -53,6 +60,7 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public void deleteClient(int idClient) {
 		// TODO Auto-generated method stub
+		em.remove(idClient);
 		System.out.println("dans ClientDaoImpl.deleteClient --> client ajouté !");
 	}
 
@@ -70,6 +78,7 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public void updateClient(Client c) {
 		// TODO Auto-generated method stub
+		
 		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
 	}
 
@@ -81,5 +90,21 @@ public class ClientDaoImpl implements IClientDao {
 		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
 		return null;
 	}
+
+	/**
+	 * @return the em
+	 */
+	public EntityManager getEm() {
+		return em;
+	}
+
+	/**
+	 * @param em the em to set
+	 */
+	public void setEm(EntityManager em) {
+		this.em = em;
+	}
+	
+	
 
 }

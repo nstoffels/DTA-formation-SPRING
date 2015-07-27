@@ -13,3 +13,7 @@ les tags tp4 correspondent aux tests autowiring.
 les tags tp5 correspondent à l'apprentissage des couches DAO et métier
 
 les tags tp6 correspondent aux débuts de l'apprentissage de l'implémentation des JPA grâce à spring
+
+les tags tp7 correspondent aux AOP avec la création d'un aspect de logs
+
+les tags tp8 correspondent aux transactions.

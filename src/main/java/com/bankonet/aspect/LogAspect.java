@@ -12,6 +12,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.mysql.jdbc.log.Log;
@@ -34,6 +35,7 @@ public class LogAspect {
 	 * @param joinPoint
 	 */
 	@Before(cut)
+	@Order(0)
 	public void LogBefore(JoinPoint joinPoint) {
 		// TODO Auto-generated constructor stub
 		System.out.println("----AOP----");
@@ -47,13 +49,24 @@ public class LogAspect {
 	 * 
 	 * @param joinPoint
 	 */
-	@AfterReturning(pointcut=cut)
-	public void logAfter(JoinPoint joinPoint){
+//	@AfterReturning(pointcut=cut)
+//	@Order(1)
+//	public void logAfter(JoinPoint joinPoint){
+//		System.out.println("----AOP----");
+//		System.out.println("----AfterReturning----");
+//		System.out.println(" La classe : " + joinPoint.getTarget().getClass());
+//		System.out.println(" La méthode : "+ joinPoint.getSignature().getName());
+//		System.out.println(" Les Arguments : " + Arrays.toString(joinPoint.getArgs()) );
+//	}
+	
+	@AfterReturning(pointcut=cut, returning="result")
+	@Order(1)
+	public void logAfterDeux(JoinPoint joinPoint, Object result) throws Throwable{
 		System.out.println("----AOP----");
 		System.out.println("----AfterReturning----");
 		System.out.println(" La classe : " + joinPoint.getTarget().getClass());
 		System.out.println(" La méthode : "+ joinPoint.getSignature().getName());
-		System.out.println(" Les Arguments : " + Arrays.toString(joinPoint.getArgs()) );
+		System.out.println(" Les Arguments : " + result);
 	}
 	
 	/**
@@ -63,6 +76,7 @@ public class LogAspect {
 	 * @throws Throwable
 	 */
 	@Around(cut)
+	@Order(2)
 	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 		System.out.println("----AOP----");
 		System.out.println("----Around----");

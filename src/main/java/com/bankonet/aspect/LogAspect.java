@@ -58,7 +58,12 @@ public class LogAspect {
 //		System.out.println(" La méthode : "+ joinPoint.getSignature().getName());
 //		System.out.println(" Les Arguments : " + Arrays.toString(joinPoint.getArgs()) );
 //	}
-	
+	/**
+	 * 
+	 * @param joinPoint
+	 * @param result
+	 * @throws Throwable
+	 */
 	@AfterReturning(pointcut=cut, returning="result")
 	@Order(1)
 	public void logAfterDeux(JoinPoint joinPoint, Object result) throws Throwable{

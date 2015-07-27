@@ -4,9 +4,9 @@
 package com.bankonet.metier;
 
 import java.util.List;
-import javax.annotation.*;
 
-import org.springframework.context.annotation.Scope;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +19,7 @@ import com.bankonet.model.Client;
  * @author Admin Stoffels
  *
  */
+@SuppressWarnings("restriction")
 @Service("bankonetmetier") 
 public class BankonetMetier implements IBankonetMetier {
 
@@ -36,6 +37,7 @@ public class BankonetMetier implements IBankonetMetier {
 	public void addClient(Client c) {
 		// TODO Auto-generated method stub
 		clientdao.addClient(c);
+		//throw new RuntimeException("Erreur runtime/unchecked!");
 	}
 	@Transactional(isolation=Isolation.SERIALIZABLE, readOnly=true)
 	public List<Client> listClients() {

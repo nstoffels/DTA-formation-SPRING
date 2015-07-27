@@ -3,6 +3,7 @@
  */
 package com.bankonet.dao;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -41,7 +42,6 @@ public class ClientDaoImpl implements IClientDao {
 	@Transactional(propagation=Propagation.MANDATORY)
 	public void addClient(Client c) {
 		// TODO Auto-generated method stub
-		System.out.println("dans ClientDaoImpl.addClient --> client ajouté !");
 		System.out.println("client ajouté :"+c.toString());
 		em.persist(c);
 		
@@ -52,9 +52,9 @@ public class ClientDaoImpl implements IClientDao {
 	 */
 	public List<Client> listClients() {
 		// TODO Auto-generated method stub
-		System.out.println("dans ClientDaoImpl.List<Client> --> liste client !");
+		
 		Query req=em.createQuery("select c from Client c");
-
+		System.out.println("liste client : " + req.getResultList());
 		return req.getResultList();
 	}
 
@@ -64,8 +64,9 @@ public class ClientDaoImpl implements IClientDao {
 	@Transactional(propagation=Propagation.MANDATORY)
 	public void deleteClient(int idClient) {
 		// TODO Auto-generated method stub
-		System.out.println("dans ClientDaoImpl.deleteClient --> client ajouté !");
+		
 		Client c=em.find(Client.class, idClient);
+		System.out.println("client "+c+" Supprimé !" );
 		em.remove(c);
 		// ou em.remove(idClient);
 		
@@ -77,8 +78,9 @@ public class ClientDaoImpl implements IClientDao {
 	@Transactional(propagation=Propagation.MANDATORY)
 	public Client editClient(int idClient) {
 		// TODO Auto-generated method stub
-		System.out.println("dans ClientDaoImpl.editClient --> client édité !");
+		
 		Client client=em.find(Client.class, idClient);
+		System.out.println("client "+client+"récupéré, prêt à être édité");
 		//em.merge(client);
 		return client;
 	}
@@ -89,7 +91,7 @@ public class ClientDaoImpl implements IClientDao {
 	@Transactional(propagation=Propagation.MANDATORY)
 	public void updateClient(Client c) {
 		// TODO Auto-generated method stub
-		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
+		System.out.println("client "+c+" Mis à Jours");
 		//Client client=em.find(Client.class, c);
 		em.merge(c);
 		
@@ -101,9 +103,10 @@ public class ClientDaoImpl implements IClientDao {
 	@Transactional(propagation=Propagation.MANDATORY)
 	public List<Client> chercherClients(String motCle) {
 		// TODO Auto-generated method stub
-		System.out.println("dans ClientDaoImpl.chercherClient --> client MàJ !");
+		
 		Query req=em.createQuery("select c from Client c where c.nom like :x or c.prenom like :x");
 		req.setParameter("x", "%"+motCle+"%");
+		System.out.println("Le client "+req.getResultList()+" a été trouvé");
 		return req.getResultList();
 	}
 

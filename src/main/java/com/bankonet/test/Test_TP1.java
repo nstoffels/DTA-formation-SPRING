@@ -68,7 +68,7 @@ public class Test_TP1 {
 		
 //		System.out.println(bankonetMetier.listClients());
 		
-//		bankonetMetier.addClient(new Client("DODO","Petit","log3","mdp3",new Adresse(1, "avenue Morphé", "Silence")));
+//		bankonetMetier.addClient(new Client("POJO","Java","log4","mdp4",new Adresse(1, "avenue Objet", "Classe")));
 //		bankonetMetier.addClient(new Client("toto","tata","log2","mdp32",new Adresse(36, "avenue Cyranos", "Paris ")));	
 //		bankonetMetier.SupprimerClientDontLeNomContient("toto");
 	}

@@ -5,8 +5,6 @@ package com.bankonet.metier;
 
 import java.util.List;
 
-import javax.annotation.*;
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 

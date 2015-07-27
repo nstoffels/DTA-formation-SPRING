@@ -8,10 +8,8 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.bankonet.metier.BankonetMetier;
 import com.bankonet.metier.IBankonetMetier;
 import com.bankonet.metier.ReportService;
-import com.bankonet.model.Adresse;
 import com.bankonet.model.Client;
 
 /**

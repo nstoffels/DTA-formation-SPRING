@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bankonet.metier.IBankonetMetier;
 import com.bankonet.metier.ReportService;
+import com.bankonet.model.Adresse;
 import com.bankonet.model.Client;
 
 /**
@@ -67,7 +68,7 @@ public class Test_TP1 {
 		
 //		System.out.println(bankonetMetier.listClients());
 		
-//		bankonetMetier.addClient(new Client("toto","tata","log2","mdp2",new Adresse(36, "avenue Cyrnos", "Paris")));
+		bankonetMetier.addClient(new Client("toto","tata","log2","mdp2",new Adresse(36, "avenue Cyrnos", "Paris")));
 		
 	}
 

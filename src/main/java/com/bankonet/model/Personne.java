@@ -22,7 +22,6 @@ public class Personne {
 	private int id;
 
 
-
 	@Size(min=3, max=60)
 	String nom ;
 	@Size(min=3, max=60)

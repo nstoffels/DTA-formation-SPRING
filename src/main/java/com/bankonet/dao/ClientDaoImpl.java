@@ -11,6 +11,8 @@ import javax.persistence.Query;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bankonet.model.Client;
@@ -20,7 +22,6 @@ import com.bankonet.model.Client;
  *
  */
 @Repository("clientdao")
-@Scope("prototype")
 public class ClientDaoImpl implements IClientDao {
 
 	/**
@@ -30,18 +31,18 @@ public class ClientDaoImpl implements IClientDao {
 	private EntityManager em;
 	
 	
-
 	public ClientDaoImpl() {
 		// TODO Auto-generated constructor stub
 	}
 
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#addClient(com.bankonet.model.Client)
-	 */
-	@Transactional
+	 */	
+	@Transactional(propagation=Propagation.MANDATORY)
 	public void addClient(Client c) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.addClient --> client ajouté !");
+		System.out.println("client ajouté :"+c.toString());
 		em.persist(c);
 		
 	}
@@ -60,7 +61,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#deleteClient(int)
 	 */
-	@Transactional
+	@Transactional(propagation=Propagation.MANDATORY)
 	public void deleteClient(int idClient) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.deleteClient --> client ajouté !");
@@ -73,7 +74,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#editClient(int)
 	 */
-	@Transactional
+	@Transactional(propagation=Propagation.MANDATORY)
 	public Client editClient(int idClient) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.editClient --> client édité !");
@@ -85,7 +86,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#updateClient(com.bankonet.model.Client)
 	 */
-	@Transactional
+	@Transactional(propagation=Propagation.MANDATORY)
 	public void updateClient(Client c) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.updateClient --> client MàJ !");
@@ -97,6 +98,7 @@ public class ClientDaoImpl implements IClientDao {
 	/* (non-Javadoc)
 	 * @see com.bankonet.dao.IClientDao#chercherClients(java.lang.String)
 	 */
+	@Transactional(propagation=Propagation.MANDATORY)
 	public List<Client> chercherClients(String motCle) {
 		// TODO Auto-generated method stub
 		System.out.println("dans ClientDaoImpl.chercherClient --> client MàJ !");
